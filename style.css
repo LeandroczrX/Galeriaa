@@ -20,10 +20,11 @@ nav {
 
 nav ul {
     list-style: none;
-    margin: 10px;
-    padding: 10px;
+    margin: 0;
+    padding: 0;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 nav ul li {
@@ -43,17 +44,14 @@ nav a {
     gap: 15px;
     padding: 20px;
     justify-content: center;
-    
 }
 
 .galeria img {
     width: calc(25% - 15px); /* 4 fotos por linha */
     border-radius: 8px;
     transition: transform 0.3s;
-    border: 1px solid #000;   /* borda preta fina */
-    
+    border: 1px solid #000; /* borda preta fina */
 }
-
 
 /* quadro da equipe */
 .quadro-equipe {
@@ -71,7 +69,6 @@ nav a {
     border-radius: 10px;
     border: 1px solid #000000;
     text-align: center;
-
 }
 
 .quadro-membro img {
@@ -79,14 +76,13 @@ nav a {
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid #424242; 
-    
+    border: 1px solid #424242;
 }
 
 /* responsividade */
 @media (max-width: 770px) {
 
-    /* seçoes flexíveis */
+    /* seções flexíveis */
     .section-flex {
         flex-direction: column;
         text-align: center;
@@ -105,16 +101,29 @@ nav a {
     }
 
     .quadro-membro {
-        width: 70%;
+        width: 70%; /* aumenta o tamanho dos membros da equipe em telas menores */
     }
 
+    /* galeria em tablets (2 fotos por linha) */
     .galeria img {
-        width: calc(50% - 15px); /* 2 fotos por linha em tablets */
+        width: calc(50% - 15px); /* 2 fotos por linha */
     }
 }
 
 @media (max-width: 480px) {
+    /* galeria em celulares (1 foto por linha) */
     .galeria img {
         width: 100%; /* 1 foto por linha em celulares */
+    }
+
+    /* menu em dispositivos móveis */
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* quadro equipe responsivo */
+    .quadro-membro {
+        width: 80%; /* Ajusta o tamanho do quadro da equipe em celulares */
     }
 }
